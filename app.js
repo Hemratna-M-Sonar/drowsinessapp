@@ -16,9 +16,18 @@ app.use(cookieParser());
 //   })
 // );
 app.use(cors());
-
+app.use((req,res,next)=>{
+  res.setHeader('Access-Control-Allow-Origin','*');
+  res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+  res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+  next(); 
+})
 app.use("/api/v1", User);
 
 app.get("/", (req, res) => {
   res.send("Server is working");
 });
+app.post("/", (req, res) => {
+  const info = req.body;
+  console.log(info)
+})

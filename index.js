@@ -1,7 +1,6 @@
 import { app } from "./app.js";
 import { config } from "dotenv";
 import { connectDatabase } from "./config/database.js";
-import cloudinary from "cloudinary";
 
 config({
   path: "./config/config.env",
